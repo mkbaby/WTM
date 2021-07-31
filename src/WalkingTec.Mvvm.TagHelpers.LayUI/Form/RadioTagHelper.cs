@@ -109,8 +109,9 @@ namespace WalkingTec.Mvvm.TagHelpers.LayUI
             {
                 var item = listItems[i];
                 var selected = item.Selected ? " checked" : " ";
+                var disabled = item.Disabled ? " disabled" : " ";
                 output.PostContent.AppendHtml($@"
-        <input type=""radio"" name=""{Field.Name}"" value=""{item.Value}"" title=""{item.Text}"" {selected} />");
+        <input type=""radio"" name=""{Field.Name}"" value=""{item.Value}"" title=""{item.Text}"" {selected} {disabled}/>");
             }
 
             base.Process(context, output);
